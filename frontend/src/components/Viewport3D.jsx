@@ -201,7 +201,7 @@ export default function Viewport3D({ config, isRunning, onConfigUpdate, simulati
                 zIndex: 100,
                 width: '160px'
             }}>
-                <div style={{ fontWeight: 'bold', marginBottom: '6px', color: '#06b6d4' }}>🎮 Controls</div>
+                <div style={{ fontWeight: 'bold', marginBottom: '6px', color: '#06b6d4' }}>Controls</div>
 
                 {/* Gizmo Toggle */}
                 <label style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', marginBottom: '4px' }}>
@@ -244,7 +244,7 @@ export default function Viewport3D({ config, isRunning, onConfigUpdate, simulati
 
                 <hr style={{ border: 'none', borderTop: '1px solid #334155', margin: '8px 0' }} />
 
-                <div style={{ fontWeight: 'bold', marginBottom: '4px', color: '#22d3ee' }}>📡 Signals</div>
+                <div style={{ fontWeight: 'bold', marginBottom: '4px', color: '#22d3ee' }}>Signals</div>
                 <label style={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer' }}>
                     <input type="checkbox" checked={showSignals} onChange={(e) => setShowSignals(e.target.checked)} />
                     Show Traces
@@ -273,7 +273,7 @@ export default function Viewport3D({ config, isRunning, onConfigUpdate, simulati
                     color: '#22c55e',
                     zIndex: 100
                 }}>
-                    ⏱️ {formatTime(simulationTime || 0)}
+                    {formatTime(simulationTime || 0)}
                 </div>
             )}
 

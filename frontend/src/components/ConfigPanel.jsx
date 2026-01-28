@@ -112,7 +112,7 @@ function generateUEs(count, isd, distribution = 'uniform') {
 const SCENARIOS = [
     {
         id: 'basic',
-        name: '🔹 Basic: 1 BS, 1 UE, 1 RIS',
+        name: 'Basic: 1 BS, 1 UE, 1 RIS',
         description: 'Simple single-hop RIS relay',
         config: {
             tx_nodes: [{ id: 'BS-1', pos: [0, 5, 0], power_dbm: 20 }],
@@ -123,7 +123,7 @@ const SCENARIOS = [
     },
     {
         id: 'ellingson_experimental',
-        name: '🔬 Ellingson Exp: 45° Polar Sector',
+        name: 'Ellingson Exp: 45° Polar Sector',
         description: '1 Tx, 30 Rx (45° sector, 30cm radial, 10° angular), 2x 5×8 RIS',
         config: {
             tx_nodes: [{ id: 'Tx', pos: [0, 1.5, -2], power_dbm: 20 }],
@@ -137,7 +137,7 @@ const SCENARIOS = [
     },
     {
         id: 'ellingson_emulation',
-        name: '🎯 Ellingson Emulation: 1Tx, 30Rx',
+        name: 'Ellingson Emulation: 1Tx, 30Rx',
         description: 'Emulation matching experimental polar grid setup',
         config: {
             tx_nodes: [{ id: 'Tx', pos: [0, 1.5, -3], power_dbm: 20 }],
@@ -148,7 +148,7 @@ const SCENARIOS = [
     },
     {
         id: 'wp_case1_40x40',
-        name: '📋 White Paper: 7-Cell, 40×40 RIS',
+        name: 'White Paper: 7-Cell, 40x40 RIS',
         description: 'System-level: 7 cells, 4 large RIS/sector',
         config: {
             tx_nodes: generateHexBSPositions(500),
@@ -159,7 +159,7 @@ const SCENARIOS = [
     },
     {
         id: 'multi_ris',
-        name: '🔹 Multi-RIS Interference',
+        name: 'Multi-RIS Interference',
         description: '2 BS, 4 RIS panels, interference scenario',
         config: {
             tx_nodes: [
@@ -178,7 +178,7 @@ const SCENARIOS = [
     },
     {
         id: 'nlos_indoor',
-        name: '🏢 NLOS Indoor (RIS Benefit)',
+        name: 'NLOS Indoor (RIS Benefit)',
         description: 'Indoor NLOS: direct path blocked, RIS provides coverage',
         config: {
             tx_nodes: [{ id: 'BS', pos: [0, 3, -10], power_dbm: 23 }],
@@ -194,7 +194,7 @@ const SCENARIOS = [
     },
     {
         id: 'custom',
-        name: '⚙️ Custom Configuration',
+        name: 'Custom Configuration',
         description: 'Define your own scenario',
         config: null
     }
@@ -245,11 +245,11 @@ export default function ConfigPanel({ config, onConfigChange, onScenarioLoad, on
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '11px' }}>
-            <h2 style={{ color: '#06b6d4', fontSize: '14px', marginBottom: '2px' }}>⚙️ Configuration</h2>
+            <h2 style={{ color: '#06b6d4', fontSize: '14px', marginBottom: '2px' }}>Configuration</h2>
 
             {/* Scenario Selector */}
             <div style={{ ...sectionStyle, background: 'linear-gradient(145deg, #1e3a5f, #0f172a)' }}>
-                <h3 style={{ color: '#fbbf24', fontSize: '11px', marginBottom: '4px' }}>📋 Scenarios</h3>
+                <h3 style={{ color: '#fbbf24', fontSize: '11px', marginBottom: '4px' }}>Scenarios</h3>
                 <select
                     style={{ ...inputStyle, fontWeight: 'bold' }}
                     value={selectedScenario}
@@ -266,7 +266,7 @@ export default function ConfigPanel({ config, onConfigChange, onScenarioLoad, on
 
             {/* Node Summary */}
             <div style={sectionStyle}>
-                <h3 style={{ color: '#22d3ee', fontSize: '10px', marginBottom: '4px' }}>📊 Nodes</h3>
+                <h3 style={{ color: '#22d3ee', fontSize: '10px', marginBottom: '4px' }}>Nodes</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '4px', textAlign: 'center' }}>
                     <div style={{ background: '#3b82f6', borderRadius: '4px', padding: '4px' }}>
                         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>{config.tx_nodes?.length || 1}</div>
@@ -285,7 +285,7 @@ export default function ConfigPanel({ config, onConfigChange, onScenarioLoad, on
 
             {/* RIS Phase */}
             <div style={sectionStyle}>
-                <h3 style={{ color: '#fbbf24', fontSize: '10px', marginBottom: '4px' }}>🔲 RIS Phase</h3>
+                <h3 style={{ color: '#fbbf24', fontSize: '10px', marginBottom: '4px' }}>RIS Phase</h3>
                 <select style={inputStyle} value={config.ris_bits || 2}
                     onChange={(e) => onConfigChange('ris_bits', parseInt(e.target.value))}>
                     {QUANTIZATION_BITS.map(q => <option key={q.value} value={q.value}>{q.label}</option>)}
@@ -294,7 +294,7 @@ export default function ConfigPanel({ config, onConfigChange, onScenarioLoad, on
 
             {/* Channel */}
             <div style={sectionStyle}>
-                <h3 style={{ color: '#a78bfa', fontSize: '10px', marginBottom: '4px' }}>📶 Channel</h3>
+                <h3 style={{ color: '#a78bfa', fontSize: '10px', marginBottom: '4px' }}>Channel</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px' }}>
                     <div>
                         <label style={labelStyle}>Freq (GHz)</label>
@@ -382,7 +382,7 @@ export default function ConfigPanel({ config, onConfigChange, onScenarioLoad, on
                         fontSize: '12px'
                     }}
                 >
-                    🗺️
+                    Heatmap
                 </button>
             </div>
         </div>

@@ -367,7 +367,7 @@ export default function Heatmap({ config, isVisible, onClose }) {
                 {/* Header */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                     <div>
-                        <h2 style={{ color: '#22d3ee', margin: 0, fontSize: '16px' }}>🗺️ Coverage Analysis</h2>
+                        <h2 style={{ color: '#22d3ee', margin: 0, fontSize: '16px' }}>Coverage Analysis</h2>
                         <span style={{ color: '#64748b', fontSize: '10px' }}>Refresh: {nextRefresh}s</span>
                     </div>
                     <button onClick={onClose} style={{ background: '#ef4444', border: 'none', borderRadius: '4px', padding: '4px 12px', color: 'white', cursor: 'pointer', fontWeight: 'bold' }}>✕</button>
@@ -376,9 +376,9 @@ export default function Heatmap({ config, isVisible, onClose }) {
                 {/* View Mode Toggle */}
                 <div style={{ display: 'flex', gap: '4px', marginBottom: '8px' }}>
                     {[
-                        { id: 'ris', label: '📡 With RIS', color: '#3b82f6' },
-                        { id: 'direct', label: '📶 Direct Only', color: '#f59e0b' },
-                        { id: 'gain', label: '📈 RIS Gain', color: '#22c55e' }
+                        { id: 'ris', label: 'With RIS', color: '#3b82f6' },
+                        { id: 'direct', label: 'Direct Only', color: '#f59e0b' },
+                        { id: 'gain', label: 'RIS Gain', color: '#22c55e' }
                     ].map(mode => (
                         <button
                             key={mode.id}
@@ -412,7 +412,7 @@ export default function Heatmap({ config, isVisible, onClose }) {
                             cursor: 'pointer',
                             fontSize: '9px'
                         }}
-                    >🌍 Full View</button>
+                    >Full View</button>
                     <button
                         onClick={() => { setZoomOnRIS(true); generateHeatmap(); }}
                         style={{
@@ -425,19 +425,19 @@ export default function Heatmap({ config, isVisible, onClose }) {
                             cursor: 'pointer',
                             fontSize: '9px'
                         }}
-                    >🔍 Zoom RIS (±5m)</button>
+                    >Zoom RIS (±5m)</button>
                 </div>
 
                 {loading && (
                     <div style={{ textAlign: 'center', padding: '60px', color: '#94a3b8' }}>
-                        <div style={{ fontSize: '32px', marginBottom: '10px' }}>⏳</div>
+                        <div style={{ fontSize: '32px', marginBottom: '10px' }}>...</div>
                         Calculating coverage...
                     </div>
                 )}
 
                 {error && (
                     <div style={{ textAlign: 'center', padding: '30px', color: '#ef4444', background: '#1e1e2e', borderRadius: '8px' }}>
-                        ❌ {error}
+                        Error: {error}
                     </div>
                 )}
 
@@ -468,7 +468,7 @@ export default function Heatmap({ config, isVisible, onClose }) {
                         {/* RIS Gain Stats */}
                         {heatmapData.avg_gain !== undefined && (
                             <div style={{ marginTop: '8px', padding: '8px', background: '#0f172a', borderRadius: '6px', fontSize: '10px' }}>
-                                <div style={{ color: '#22c55e', fontWeight: 'bold', marginBottom: '4px' }}>📊 RIS Boost Verification</div>
+                                <div style={{ color: '#22c55e', fontWeight: 'bold', marginBottom: '4px' }}>RIS Boost Verification</div>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', color: '#e2e8f0' }}>
                                     <div>Avg: <b style={{ color: heatmapData.avg_gain > 0 ? '#22c55e' : '#ef4444' }}>
                                         {formatGain(heatmapData.avg_gain)}
@@ -485,9 +485,9 @@ export default function Heatmap({ config, isVisible, onClose }) {
 
                         {/* Info */}
                         <div style={{ marginTop: '8px', fontSize: '9px', color: '#64748b', display: 'flex', gap: '12px' }}>
-                            <span>🔵 Tx</span>
-                            <span>🟡 RIS ({config.ris_nodes?.[0]?.elements || 40} elem)</span>
-                            <span>🟢 Rx</span>
+                            <span>[Tx]</span>
+                            <span>[RIS] ({config.ris_nodes?.[0]?.elements || 40} elem)</span>
+                            <span>[Rx]</span>
                             <span>Height: 1.5m</span>
                         </div>
 
@@ -505,7 +505,7 @@ export default function Heatmap({ config, isVisible, onClose }) {
                                 fontSize: '11px',
                                 fontWeight: 'bold'
                             }}
-                        >🔄 Regenerate</button>
+                        >Regenerate</button>
                     </>
                 )}
             </div>

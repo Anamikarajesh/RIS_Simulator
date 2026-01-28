@@ -40,7 +40,7 @@ export default function Dashboard({ state, config, simulationTime, isRunning, se
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '11px' }}>
-            <h2 style={{ color: '#06b6d4', fontSize: '13px', marginBottom: '2px' }}>📊 Live Data</h2>
+            <h2 style={{ color: '#06b6d4', fontSize: '13px', marginBottom: '2px' }}>Live Data</h2>
 
             {/* Simulation Status */}
             <div style={{ ...cardStyle, background: isRunning ? 'linear-gradient(145deg, #14532d, #0f172a)' : cardStyle.background }}>
@@ -63,7 +63,7 @@ export default function Dashboard({ state, config, simulationTime, isRunning, se
             {/* Rx Selector */}
             {rxNodes.length > 1 && (
                 <div style={cardStyle}>
-                    <h3 style={{ color: '#22c55e', fontSize: '10px', marginBottom: '4px' }}>🎯 Select Rx</h3>
+                    <h3 style={{ color: '#22c55e', fontSize: '10px', marginBottom: '4px' }}>Select Rx</h3>
                     <select
                         style={{
                             width: '100%',
@@ -87,7 +87,7 @@ export default function Dashboard({ state, config, simulationTime, isRunning, se
             {/* Channel Metrics */}
             <div style={cardStyle}>
                 <h3 style={{ color: '#22d3ee', fontSize: '10px', marginBottom: '4px' }}>
-                    📡 Channel → {selectedRx?.id || 'Rx'}
+                    Channel → {selectedRx?.id || 'Rx'}
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
                     <div style={{ textAlign: 'center' }}>
@@ -107,7 +107,7 @@ export default function Dashboard({ state, config, simulationTime, isRunning, se
 
             {/* Tx IQ Plot */}
             <div style={{ ...cardStyle, height: '100px', display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ color: '#3b82f6', fontSize: '10px', marginBottom: '2px' }}>📤 Tx IQ (Transmitted)</h3>
+                <h3 style={{ color: '#3b82f6', fontSize: '10px', marginBottom: '2px' }}>Tx IQ (Transmitted)</h3>
                 <div style={{ flex: 1, minHeight: 0 }}>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={txChartData} margin={{ top: 2, right: 5, left: -30, bottom: 0 }}>
@@ -123,7 +123,7 @@ export default function Dashboard({ state, config, simulationTime, isRunning, se
 
             {/* Rx IQ Plot */}
             <div style={{ ...cardStyle, height: '100px', display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ color: '#22c55e', fontSize: '10px', marginBottom: '2px' }}>📥 Rx IQ (Received)</h3>
+                <h3 style={{ color: '#22c55e', fontSize: '10px', marginBottom: '2px' }}>Rx IQ (Received)</h3>
                 <div style={{ flex: 1, minHeight: 0 }}>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={rxChartData} margin={{ top: 2, right: 5, left: -30, bottom: 0 }}>
